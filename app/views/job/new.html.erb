@@ -1,0 +1,25 @@
+<h1>Add new job</h1>
+
+<%= form_tag :action => 'create' do %>
+<p><label for = "job_position">Position</label>:
+<%= text_field 'jobs', 'Company' %></p>
+
+<p><label for = "job_company">Company</label>:
+<%= text_field 'jobs', 'Kind_of' %></p>
+
+<p><label for = "job_Kind_of">Kind of position</label>:
+<%= text_field 'jobs', 'Salary' %></p>
+
+<p><label for = "job_salary">Salary</label>:
+<%= text_field 'jobs', 'Status' %></p>
+
+<p><label for = "job_Status">Status</label>:
+<%= text_field 'jobs', 'Place' %></p>
+
+<p><label for = "job_Place">Place</label>:
+<%= text_field 'jobs', 'Place' %></p>
+
+<%= submit_tag "Create" %>
+
+<% end -%>
+<%= link_to 'Back', {:action => 'list'} %>

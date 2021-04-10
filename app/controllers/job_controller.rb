@@ -1,14 +1,14 @@
-class JobsController < ApplicationController
+class JobController < ApplicationController
     def list
-        @jobs = Jobs.all
+        @jobs = Job.all
     end
     
     def show
-        @job = Jobs.find(params[:id])
+        @job = Job.find(params[:id])
     end
     
     def new
-        @job = Jobs.new
+        @job = Job.new
     end
 
     def jobs_params
@@ -16,9 +16,9 @@ class JobsController < ApplicationController
     end
     
     def create
-        @job = Jobs.new(job_params)
+        @job = Job.new(job_params)
 
-        if @book.save
+        if @job.save
             redirect_to :action => 'list'
         else 
             render :action => 'new'
@@ -26,7 +26,7 @@ class JobsController < ApplicationController
     end
     
     def edit
-        @job = Jobs.find(params[:id])
+        @job = Job.find(params[:id])
     end
 
     def job_params
@@ -34,7 +34,7 @@ class JobsController < ApplicationController
     end
     
     def update
-        @job = Jobs.find(params[:id])
+        @job = Job.find(params[:id])
 
         if @job.update_attributes(job_params)
             redirect_to :action => 'show', :id => @job
@@ -44,7 +44,7 @@ class JobsController < ApplicationController
     end
     
     def delete
-        Jobs.find(params[:id]).destroy
+        Job.find(params[:id]).destroy
         redirect_to :action => 'list'
     end
 end
