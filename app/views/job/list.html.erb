@@ -1,13 +1,31 @@
-<% if @jobs.blank? %>
-<p>There are not any jobs currently in the system.</p>
-<% else %>
-<p>These are the current jobs in our system</p>
+<div class="container mt-5">
+    <% if @jobs.blank? %>
+    <h3 >There are not any jobs currently in the system :</h3>
+    <% else %>
+    <h3>These are the current jobs in our system :</h3>
+    <br/>
 
-<ul id = "jobs">
-    <% @jobs.each do |job| %>
-    <li><%= link_to job.position, {:action => 'show', :id => job.id} -%></li>
+    <table class="table table-striped" id="jobs">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Position</th>
+                <th>Company</th>
+                <th>Type</th>
+                <th>Place</th>
+            </tr>
+            <% @jobs.each do |job| %>
+            <tr>
+                <td><%= job.id %></td>
+                <td><%= link_to job.position, {:action => 'show', :id => job.id}-%></td>
+                <td><%= job.company %></td>
+                <td><%= job.kind_of %></td>
+                <td><%= job.place %></td>
+            </tr>
+            <% end %>
+        </thead>
+    </table>
+
     <% end %>
-</ul>
-
-<% end %>
-<p><%= link_to "Add new Job", {:action => 'new' }%></p>
+    <button type="button" class="btn btn-primary"><%= link_to "Add new Job", {:action => 'new' }, :style => "color :white"%></button>
+</div>

@@ -1,26 +1,44 @@
-<h1>Add new job</h1>
+<div class="container">
+    <h3 class="mt-5">Add new job</h3>
 
-<%= form_tag :action => 'create' do %>
+    <br/>
 
-<p><label for = "job_position">Position</label>:
-<%= text_field 'jobs', 'position' %></p>
+    <form>
+        <%= form_tag :action => 'create' do %>
+        <div class="mb-3">
+            <label for = "job_position" class ="form-label">Position :</label>
+            <%= text_field 'jobs', 'position', class:'form-control' %>
+        </div>
 
-<p><label for = "job_company">Company</label>:
-<%= text_field 'jobs', 'company' %></p>
+        <div class="mb-3">
+            <label for = "job_company" class ="form-label">Company :</label>
+            <%= text_field 'jobs', 'company', class:'form-control'  %>
+        </div>
+        <div class="row row-cols-2">
+            <div class="col mb-3">
+                <label for = "job_kind_of" class ="col-form-label">Kind of position :</label>
+                <%= text_field 'jobs', 'kind_of', class:'form-control'  %>
+            </div>
 
-<p><label for = "job_kind_of">Kind of position</label>:
-<%= text_field 'jobs', 'kind_of' %></p>
+            <div class="col mb-3">
+                <label for = "job_salary" class ="col-form-label">Salary :</label>
+                <%= text_field 'jobs', 'salary', class:'form-control'  %>
+            </div>
 
-<p><label for = "job_salary">Salary</label>:
-<%= text_field 'jobs', 'salary' %></p>
+            <div class="col mb-3">
+                <label for = "job_status" class ="col-form-label">Status :</label>
+                <%= text_field 'jobs', 'status', class:'form-control'  %>
+            </div>
 
-<p><label for = "job_status">Status</label>:
-<%= text_field 'jobs', 'status' %></p>
+            <div class="col mb-3">
+                <label for = "job_place" class ="col-form-label">Place :</label>
+                <%= text_field 'jobs', 'place', class:'form-control'  %>
+            </div>
+        </div>
+        
+        <%= submit_tag "Create" %>
 
-<p><label for = "job_place">Place</label>:
-<%= text_field 'jobs', 'place' %></p>
-
-<%= submit_tag "Create" %>
-
-<% end -%>
-<%= link_to 'Back', {:action => 'list'} %>
+        <% end -%>
+        <%= link_to 'Back', {:action => 'list'} %>
+    </form>
+</div>
