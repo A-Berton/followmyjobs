@@ -1,14 +1,16 @@
-<h1><%= @job.position %></h1>
+<div class="container">
 
-<p>
-   <strong>Company: </strong> <%= @job.company %><br />
-   <strong>Kind_of:</strong> <%= @job.kind_of %><br />
-</p>
+   <div class="card mt-5">
+      <div class="card-body">
+         <h5 class="card-title"><strong>Position: <%= @job.position %> </strong></h5>
+         <h5 class="card-title"><strong>Company:  <%= @job.company %> </strong></h5>
+         <p class="card-text">Kind_of: <%= @job.kind_of %></p>
+         <p class="card-text">Salary: <<%= @job.salary %></p></p>
+         <p class="card-text">Status : <%= @job.status %></p>
+         <p class="card-text">Place : <%= @job.place %></p>
+         <%= link_to 'Back', {:action => 'list'} %>
+      </div>
+   </div>
 
-<p>Salary : <%= @job.salary %></p>
-<p>Status : <%= @job.status %></p>
-<p>Place : <%= @job.place %></p>
-
-<hr />
-
-<%= link_to 'Back', {:action => 'list'} %>
+   
+</div>
