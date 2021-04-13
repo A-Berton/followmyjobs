@@ -13,11 +13,11 @@
 ActiveRecord::Schema.define(version: 2021_04_10_144753) do
 
   create_table "jobs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "position", null: false
-    t.string "company", null: false
-    t.string "kind_of", limit: 10
+    t.string "position"
+    t.string "company"
+    t.string "kind_of"
     t.string "salary"
-    t.string "status", null: false
+    t.string "status"
     t.string "place"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

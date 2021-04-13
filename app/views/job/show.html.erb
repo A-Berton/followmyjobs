@@ -1,0 +1,14 @@
+<h1><%= @job.position %></h1>
+
+<p>
+   <strong>Company: </strong> $<%= @job.company %><br />
+   <strong>Kind_of:</strong> <%= @job.kind_of %><br />
+</p>
+
+<p>Salary : <%= @job.salary %></p>
+<p>Status : <%= @job.status %></p>
+<p>Place : <%= @job.place %></p>
+
+<hr />
+
+<%= link_to 'Back', {:action => 'list'} %>

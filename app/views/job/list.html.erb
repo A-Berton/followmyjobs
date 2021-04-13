@@ -1,0 +1,13 @@
+<% if @jobs.blank? %>
+<p>There are not any jobs currently in the system.</p>
+<% else %>
+<p>These are the current jobs in our system</p>
+
+<ul id = "jobs">
+    <% @jobs.each do |job| %>
+    <li><%= link_to job.position, {:action => 'show', :id => job.id} -%></li>
+    <% end %>
+</ul>
+
+<% end %>
+<p><%= link_to "Add new Job", {:action => 'new' }%></p>
