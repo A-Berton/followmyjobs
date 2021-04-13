@@ -4,8 +4,8 @@
 <p>These are the current jobs in our system</p>
 
 <ul id = "jobs">
-    <% @jobs.each do |c| %>
-    <li><%= link_to c.title, {:action => 'show', :id => c.id} -%></li>
+    <% @jobs.each do |job| %>
+    <li><%= link_to job.position, {:action => 'show', :id => job.id} -%></li>
     <% end %>
 </ul>
 
