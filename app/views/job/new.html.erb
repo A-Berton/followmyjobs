@@ -3,8 +3,8 @@
 
     <br/>
 
-    <form>
-        <%= form_tag :action => 'create' do %>
+    <%= form_for @job, url: {action: "create"} do |f| %>
+        
         <div class="mb-3">
             <label for = "job_position" class ="form-label">Position :</label>
             <%= text_field 'jobs', 'position', class:'form-control' %>
@@ -36,7 +36,7 @@
             </div>
         </div>
         
-        <%= submit_tag "Create" %>
+        <%= f.submit "Create" %>
 
         <% end -%>
         <%= link_to 'Back', {:action => 'list'} %>

@@ -33,6 +33,7 @@ class JobController < ApplicationController
     #edit a job
     def edit
         @job = Job.find(params[:id])
+        render :edit
     end
 
     def job_params

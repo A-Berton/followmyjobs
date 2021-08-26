@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'job/create'
   patch 'job/update'
   get 'job/list'
-  get 'job/show'
+  get 'job/show/:id' => 'job#show', :as => :show
   get 'job/edit'
   get 'job/delete'
   get 'job/update'
