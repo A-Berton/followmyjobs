@@ -1,16 +1,19 @@
-<div class="container">
-
-   <div class="card mt-5">
-      <div class="card-body">
-         <h5 class="card-title"><strong>Position: <%= @job.position %> </strong></h5>
-         <h5 class="card-title"><strong>Company:  <%= @job.company %> </strong></h5>
-         <p class="card-text">Kind_of: <%= @job.kind_of %></p>
-         <p class="card-text">Salary: <<%= @job.salary %></p></p>
-         <p class="card-text">Status : <%= @job.status %></p>
-         <p class="card-text">Place : <%= @job.place %></p>
-         <%= link_to 'Back', {:action => 'list'} %>
+<div class="container mt-5">
+   <div class="card" id="myModal">
+      <div class="card-header">
+         <h5 class="card-title" id="myModalLabel"><strong>Position: </strong> <%= @job.position %> </h5>
+         <h5 class="card-title"><strong>Company:  </strong> <%= @job.company %> </h5>
       </div>
+      <div class="card-body">
+         <p><strong>Kind_of: </strong> <%= @job.kind_of %></p>
+         <p><strong>Salary: </strong> <%= @job.salary %></p>
+         <p><strong>Status : </strong> <%= @job.status %></p>
+         <p><strong>Place : </strong> <%= @job.place %></p>
+      </div>
+      <div class="card-footer">
+      <ul class="list-inline">
+         <li class="list-inline-item mr-3"><%= link_to 'Back', {:action => 'list'} %></li>
+         <li class="list-inline-item"><%= link_to 'Delete', {:action => 'delete', :id => @job.id} %></li>
+      </ul>
    </div>
-
-   
 </div>
